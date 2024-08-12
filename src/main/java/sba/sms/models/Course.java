@@ -1,12 +1,10 @@
 package sba.sms.models;
 
 import jakarta.persistence.*;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -19,6 +17,7 @@ import java.util.Set;
  * of the relationship. Implement Lombok annotations to eliminate boilerplate
  * code.
  */
+
 @Entity
 @Table(name = "course")
 public class Course {
@@ -34,7 +33,7 @@ public class Course {
     @Column(name = "instructor", length = 50, nullable = false)
     private String instructor;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REMOVE,
+    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE,
             CascadeType.PERSIST })
     @JoinTable(name = "students_courses", joinColumns = @JoinColumn(name = "courses_id"), inverseJoinColumns = @JoinColumn(name = "student_email"))
     private Set<Student> students = new HashSet<>();

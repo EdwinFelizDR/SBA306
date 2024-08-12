@@ -69,12 +69,11 @@ public class CourseService implements CourseI {
 
     public List<Course> getAllCourses() {
         // TODO: MIGHT NOT NEED THIS?
-        Transaction transaction = null;
         try {
             // We're starting the transaction here!
             session = factory.openSession();
             // TODO: MIGHT NOT NEED THIS?
-            transaction = session.beginTransaction();
+            session.beginTransaction();
 
             // Making a SQL QUERY
             String hql = "SELECT course FROM Course course";

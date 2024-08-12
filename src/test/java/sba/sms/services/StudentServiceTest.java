@@ -17,4 +17,27 @@ import static org.assertj.core.api.Assertions.*;
 class StudentServiceTest {
 
 
+    @Test
+    void createStudent() {
+    }
+
+    @Test
+    void getStudentByEmail() {
+    }
+
+    @Test
+    void validateStudent() {
+    }
+
+    @Test
+    void getAllStudents() {
+    }
+
+    @Test
+    void getStudentCourses() {
+    }
+
+    @Test
+    void registerStudentToCourse() {
+    }
 }
